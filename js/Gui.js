@@ -182,10 +182,6 @@ otp.client.Gui = otp.Class({
         });
     },
 
-    setPois : function(poisSource) {
-        return this;
-    },
-
     _refreshPois : function() {
         var thisGui = this;
         $("#loading").hide();
