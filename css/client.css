@@ -1,0 +1,280 @@
+body, table, input {
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+	font-size: 11pt;
+	margin: 0;
+	/* do not add scroll bars unless overridden on sub-elements */
+	overflow: hidden;
+}
+
+div#map {
+	z-index: 1;
+	height: 100%;
+	background: #eee;
+	margin: 0;
+	padding: 0;
+}
+
+div#toolbox {
+	z-index: 1000;
+	position: absolute;
+	right: 10px;
+	top: 2%;
+	height: 92%;
+	width: 280px;
+	margin: 0;
+	padding: 6px 8px;
+	font: 12pt;
+	background-color: white;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.maplegend {
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+	font: 11pt;
+	padding: 6px 8px;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	width: 160px;
+}
+
+.maplegend .show-hover {
+	display: none;
+}
+
+.maplegend:HOVER .show-hover {
+	display: block;
+}
+
+/* Address selector */
+.address-selector {
+	padding-bottom: 0.4em;
+	border-bottom: #cccccc 1px dashed;
+}
+
+label.address {
+	display: block;
+	padding-left: 38px;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	background-image: url('../img/marker_icon.png');
+	background-repeat: no-repeat;
+	background-position: 4px center;
+	min-height: 42px;
+}
+
+label.address span {
+}
+
+label.address input {
+	width: 100%;
+}
+
+.smalltip {
+	padding-left: 38px;
+	color: #888888;
+	font-size: 10pt;
+	font-weight: 300; 
+}
+
+/* Mode selector */
+.mode-selector {
+	padding-bottom: 0.4em;
+	border-bottom: #cccccc 1px dashed;
+}
+
+.mode-selector label>input {
+	display: none;
+}
+
+.mode-selector label>input+span {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: top center;
+	padding-top: 50px;
+	width: 90px;
+	vertical-align: top;
+	text-align: center;
+}
+
+.mode-selector label>input+span {
+	color: #cccccc;
+}
+
+.mode-selector label>input:CHECKED+span {
+	color: black;
+}
+
+.mode-selector label.mode-transit>input+span {
+	background-image: url("../img/transit_inactive.png");
+}
+
+.mode-selector label.mode-transit>input:CHECKED+span {
+	background-image: url("../img/transit.png");
+}
+
+.mode-selector label.mode-walk>input+span {
+	background-image: url("../img/walk_inactive.png");
+}
+
+.mode-selector label.mode-walk>input:CHECKED+span {
+	background-image: url("../img/walk.png");
+}
+
+.mode-selector label.mode-bicycle>input+span {
+	background-image: url("../img/bicycle_inactive.png");
+}
+
+.mode-selector label.mode-bicycle>input:CHECKED+span {
+	background-image: url("../img/bicycle.png");
+}
+
+.mode-selector label>input {
+	display: none;
+}
+
+/* POI type selector */
+.poi-selector {
+	padding-bottom: 0.4em;
+	border-bottom: #cccccc 1px dashed;
+}
+
+.poi-selector label>input {
+	display: none;
+}
+
+.poi-selector label>input+span {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: top center;
+	padding-top: 36px;
+	width: 60px;
+	vertical-align: top;
+	text-align: center;
+	overflow: hidden;
+}
+
+.poi-selector label>input+span {
+	color: #cccccc;
+}
+
+.poi-selector label>input:CHECKED+span {
+	color: black;
+}
+
+.poi-selector label.poi-culture>input+span {
+	background-image: url("../img/culture_inactive.png");
+}
+
+.poi-selector label.poi-culture>input:CHECKED+span {
+	background-image: url("../img/culture.png");
+}
+
+.poi-selector label.poi-hotel>input+span {
+	background-image: url("../img/hotel_inactive.png");
+}
+
+.poi-selector label.poi-hotel>input:CHECKED+span {
+	background-image: url("../img/hotel.png");
+}
+
+.poi-selector label.poi-camping>input+span {
+	background-image: url("../img/camping_inactive.png");
+}
+
+.poi-selector label.poi-camping>input:CHECKED+span {
+	background-image: url("../img/camping.png");
+}
+
+.poi-selector label.poi-restaurant>input+span {
+	background-image: url("../img/restaurant_inactive.png");
+}
+
+.poi-selector label.poi-restaurant>input:CHECKED+span {
+	background-image: url("../img/restaurant.png");
+}
+
+/* Loading */
+.loading {
+	font-weight: 300;
+	font-size: 120%;
+	padding-left: 48px;
+	min-height: 32px;
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	background-image: url("../img/loading.gif");
+}
+
+.no-results {
+	font-weight: 300;
+	font-size: 120%;
+}
+
+/* POI list */
+.poi-list {
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 0;
+}
+
+.poi-list li {
+	list-style-type: none;
+	cursor: pointer;
+	margin: 0;
+	padding: 4px;
+	padding-left: 24px;
+	background-repeat: no-repeat;
+	background-position: 4px center;
+	border-radius: 5px;
+}
+
+.poi-list li:HOVER {
+	background-color: #eeeeee;
+}
+
+.poi-list li.CULTURE {
+	background-image: url("../img/culture_icon.png");
+}
+
+.poi-list li.HOTEL {
+	background-image: url("../img/hotel_icon.png");
+}
+
+.poi-list li.CAMPING {
+	background-image: url("../img/camping_icon.png");
+}
+
+.poi-list li.RESTAURANT {
+	background-image: url("../img/restaurant_icon.png");
+}
+
+.poi-list span.poi-name {
+	font-weight: 300;
+}
+
+.poi-list span.poi-time {
+	font-weight: bold;
+	margin-left: 0.4em;
+	color: black;
+}
+
+/* Leaflet */
+.leaflet-popup-content {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 10pt;
+}

@@ -1,0 +1,16 @@
+
+Configure apache with the following virtual host,
+assuming OTP run on port 8080 on the localhost:
+
+---------------------------------------------------------
+<VirtualHost *:80>
+	ServerName foobar
+	DocumentRoot /var/www/otp-iso-client
+	# For OTP web-services
+	ProxyPass /otp/ http://localhost:8080/otp/
+	ProxyPassReverse /otp/ http://localhost:8080/otp/
+	# For OTPA-libjs static files
+	ProxyPass /otpa/ http://localhost:8080/otp/
+	ProxyPassReverse /otpa/ http://localhost:8080/otp/
+</VirtualHost>
+---------------------------------------------------------
