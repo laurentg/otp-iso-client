@@ -10,7 +10,7 @@ assuming OTP run on port 8080 on the localhost:
 	ProxyPass /otp/ http://localhost:8080/otp/
 	ProxyPassReverse /otp/ http://localhost:8080/otp/
 	# For OTPA-libjs static files
-	ProxyPass /otpa/ http://localhost:8080/otp/
-	ProxyPassReverse /otpa/ http://localhost:8080/otp/
+	ProxyPass /otpa/ http://localhost:8080/otpa/
+	ProxyPassReverse /otpa/ http://localhost:8080/otpa/
 </VirtualHost>
 ---------------------------------------------------------
